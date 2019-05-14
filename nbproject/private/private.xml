@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Model/Class/Cliente.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Model/Class/Produto.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Model/Class/tipoProduto.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/test/Teste.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Model/Class/Endereco.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Model/Class/Pessoa.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Model/Class/Pedido.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Model/Dao/ClienteDAO.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Controller/ClienteController.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Util/ConnectionFactory.java</file>
+            <file>file:/C:/Users/wmartins/Documents/NetBeansProjects/ProjetoSegunda/src/java/Interface/BasicDAO.java</file>
+        </group>
+    </open-files>
+</project-private>
