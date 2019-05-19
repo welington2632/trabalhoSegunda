@@ -5,10 +5,14 @@
  */
 
 import Model.Class.Cliente;
+import Model.Class.Endereco;
+import Model.Dao.EnderecoDAO;
 import Util.ConnectionFactory;
-import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -27,16 +31,32 @@ public class Teste {
     }
     
     @Test
-    public void Cadastrar (Cliente cliente) throws SQLException, ClassNotFoundException {
-        // Conexão com o banco
+    public void DeveriaPuxarEndereco() throws SQLException, ClassNotFoundException{
+        Cliente cliente = new Cliente();
+        cliente = ConsultaPorCpf(1);
+        assertEquals("Av.Francisco Rodrigues Filho",cliente.getEndereco().getLogradouro());
+    }
+    
+    public Cliente ConsultaPorCpf (int cpf) throws SQLException, ClassNotFoundException {
         Connection conn = ConnectionFactory.getConnection();
-        // Preparação de código
-        PreparedStatement pr = (PreparedStatement) conn.prepareStatement("insert into Cliente (nome,endereco,numeroDeCompras,ultimaDataCompra) values(?,?,?,?)");
-        pr.setString(1, cliente.getNome());
-        pr.setInt(2, cliente.getEndereco().getId());
-        pr.setInt(3, cliente.getNumeroDeCompras());
-        pr.setDate(4, (Date) cliente.getUltimaDataCompra()); 
-        // Executa comando
-        pr.execute();
+        
+        String sqlCommand = "select * from cliente where cpf = ?";
+        PreparedStatement comando = (PreparedStatement) conn.prepareStatement(sqlCommand);
+        comando.setInt(1, cpf);
+        
+        ResultSet resultado = comando.executeQuery();
+        Cliente clienteConsultado = new Cliente();
+        EnderecoDAO endereco = new EnderecoDAO();
+        if (resultado.next()){
+            clienteConsultado.setCpf(cpf);
+            clienteConsultado.setNome(resultado.getString("nome"));
+            clienteConsultado.setEndereco(endereco.ConsultaPorId(resultado.getInt("endereco")));
+            clienteConsultado.setNumeroDeCompras(resultado.getInt("numerodecompras"));
+            clienteConsultado.setUltimaDataCompra(resultado.getDate("ultimadatacompra"));
+        }
+        
+        conn.close();
+        
+        return clienteConsultado;
     }
 }

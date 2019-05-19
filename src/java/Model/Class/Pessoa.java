@@ -10,12 +10,12 @@ package Model.Class;
  * @author wmartins
  */
 public abstract class Pessoa {
-    private int id;
+    private int cpf;
     private String nome;
     private Endereco endereco;
 
     public Pessoa(int id, String nome, Endereco endereco) {
-        this.id = id;
+        this.cpf = id;
         this.nome = nome;
         this.endereco = endereco;
     }
@@ -23,12 +23,12 @@ public abstract class Pessoa {
     public Pessoa() {
     }
 
-    public int getId() {
-        return id;
+    public int getCpf() {
+        return cpf;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCpf(int id) {
+        this.cpf = id;
     }
 
     public String getNome() {
